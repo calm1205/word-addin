@@ -6,7 +6,7 @@
   <Id>C4E304B6-24D2-416B-9BC6-2B4C4D37AEFA</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
-  <DefaultLocale>en-US</DefaultLocale>
+  <DefaultLocale>jp-JP</DefaultLocale>
   <DisplayName DefaultValue="Hello world"/>
   <Description DefaultValue="A simple hello world Office Add-in."/>
   <IconUrl DefaultValue="https://localhost:9999/assets/icon-32.png"/>
