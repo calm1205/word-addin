@@ -13,14 +13,13 @@
 
   <!-- IMPORTANT! Id must be unique for your add-in. If you copy this manifest, ensure that you change this ID to your own GUID. -->
   <Id>e504fb41-a92a-4526-b101-542f357b7acb</Id>
+
   <Version>1.0.0.0</Version>
   <ProviderName>Private WordAddin</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-ins dialog. -->
   <DisplayName DefaultValue="Add-in Commands Sample" />
-  <Description
-    DefaultValue="Sample that illustrates add-in commands basic control types and actions"
-  />
+  <Description DefaultValue="Sample add-in" />
   <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
   <IconUrl DefaultValue="https://localhost:9999/assets/icon-32.png" />
   <HighResolutionIconUrl
@@ -40,9 +39,7 @@
     <Host Name="Document" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation
-      DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html"
-    />
+    <SourceLocation DefaultValue="https://localhost:9999/" />
   </DefaultSettings>
   <!-- EndTaskPaneMode integration. -->
 
@@ -233,14 +230,14 @@
       <bt:LongStrings>
         <bt:String
           id="GetStarted.Description"
-          DefaultValue="Your sample add-in loaded successfully. Go to the HOME tab and click the 'MNTSQ AI Review' button to get started."
+          DefaultValue="Your sample add-in loaded successfully."
         />
         <bt:String
           id="TaskpaneButton.Tooltip"
           DefaultValue="Click to Show a Taskpane"
         />
       </bt:LongStrings>
-      <bt:Urls>
+      <!-- <bt:Urls>
         <bt:Url
           id="FunctionFile.Url"
           DefaultValue="https://commandsimple.azurewebsites.net/FunctionFile.html"
@@ -253,9 +250,9 @@
           id="Taskpane2.Url"
           DefaultValue="https://commandsimple.azurewebsites.net/Taskpane2.html"
         />
-      </bt:Urls>
+      </bt:Urls> -->
       <!-- ShortStrings max characters==125. -->
-      <bt:ShortStrings>
+      <!-- <bt:ShortStrings>
         <bt:String id="FunctionButton.Label" DefaultValue="Execute Function" />
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane" />
         <bt:String id="Dropdown.Label" DefaultValue="Dropdown" />
@@ -263,9 +260,9 @@
         <bt:String id="Item2.Label" DefaultValue="Show Task Pane 2" />
         <bt:String id="Tab1.GroupLabel" DefaultValue="Test Group" />
          <bt:String id="Tab1.TabLabel" DefaultValue="Test Tab" />
-      </bt:ShortStrings>
+      </bt:ShortStrings> -->
       <!-- LongStrings max characters==250. -->
-      <bt:LongStrings>
+      <!-- <bt:LongStrings>
         <bt:String
           id="FunctionButton.Tooltip"
           DefaultValue="Click to execute function."
@@ -286,7 +283,7 @@
           id="Item2.Tooltip"
           DefaultValue="Click to Show Task Pane 2."
         />
-      </bt:LongStrings>
+      </bt:LongStrings> -->
     </Resources>
   </VersionOverrides>
   <!-- EndAddinCommandsMode integration. -->
