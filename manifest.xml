@@ -25,7 +25,7 @@
   <HighResolutionIconUrl
     DefaultValue="https://localhost:9999/assets/icon-32.png"
   />
-  <SupportUrl DefaultValue="https://localhost:9999/" />
+  <SupportUrl DefaultValue="https://localhost:9999/index.html" />
   <!-- Domains that are allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation is only allowed if the domain is on this list. -->
   <AppDomains>
     <AppDomain>AppDomain1</AppDomain>
