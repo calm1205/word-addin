@@ -6,6 +6,7 @@ import HelloWorld from "./components/HelloWorld.vue";
   <div>
     <a href="https://vitejs.dev" target="_blank"> </a>
     <a href="https://vuejs.org/" target="_blank"> </a>
+    <img src="./assets/icon-32.png" alt="" />
   </div>
   <HelloWorld msg="Vite + Vue" />
 </template>
