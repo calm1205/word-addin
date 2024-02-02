@@ -39,7 +39,7 @@
     <Host Name="Document" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:9999/" />
+    <SourceLocation DefaultValue="https://localhost" />
   </DefaultSettings>
   <!-- EndTaskPaneMode integration. -->
 
