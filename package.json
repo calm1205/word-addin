@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "set-manifest": "node ./scripts/set-manifest.js"
   },
   "dependencies": {
     "vue": "^3.3.11"
