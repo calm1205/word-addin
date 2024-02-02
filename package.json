@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate": "office-addin-manifest validate manifest.xml"
   },
   "dependencies": {
     "office-addin-manifest": "^1.12.9",
