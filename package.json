@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "office-addin-manifest": "^1.12.9",
     "vue": "^3.3.11"
   },
   "devDependencies": {
