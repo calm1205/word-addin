@@ -11,6 +11,15 @@ const routes = [
     name: "taskpane",
     component: () => import("./views/TaskPane.vue"),
   },
+  {
+    path: "/assets",
+    children: [
+      {
+        path: "/assets/icon-16",
+        component: () => import("./views/Icon16.vue"),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({
