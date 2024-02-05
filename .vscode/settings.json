@@ -25,5 +25,5 @@
   },
   "git.openRepositoryInParentFolders": "never",
   "workbench.colorTheme": "GitHub Dark",
-  "cSpell.ignoreWords": ["addin", "vite"]
+  "cSpell.ignoreWords": ["addin", "vite", "taskpane"]
 }

@@ -8,6 +8,8 @@ onMounted(async () => {
 
 <template>
   <div>hello world</div>
+  <router-view></router-view>
+  <p>hogehoge</p>
 </template>
 
 <style scoped></style>
