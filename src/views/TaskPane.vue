@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>task pane</h1>
+  <h1>Task pane</h1>
 </template>
 
 <style scoped>

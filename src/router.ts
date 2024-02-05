@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import TaskPane from "./views/TaskPane.vue";
 
 const routes = [
   {
@@ -7,15 +6,10 @@ const routes = [
     name: "root",
     component: () => import("./views/Index.vue"),
   },
-  // {
-  //   path: "/taskpane",
-  //   name: "root",
-  //   component: () => import("./views/TaskPane.vue"),
-  // },
   {
     path: "/taskpane",
     name: "taskpane",
-    component: TaskPane,
+    component: () => import("./views/TaskPane.vue"),
   },
 ];
 
