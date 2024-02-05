@@ -1,71 +1,43 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<OfficeApp
-  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
-  xsi:type="TaskPaneApp"
->
-  <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation.-->
-
-  <!-- IMPORTANT! Id must be unique for your add-in. If you copy this manifest, ensure that you change this ID to your own GUID. -->
-  <Id>e504fb41-a92a-4526-b101-542f357b7acb</Id>
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>a6a6b680-d4eb-470b-9028-8138cf43590a</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Private WordAddin</ProviderName>
+  <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-ins dialog. -->
-  <DisplayName DefaultValue="Add-in Commands Sample" />
-  <Description DefaultValue="Sample add-in" />
-  <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
-  <IconUrl DefaultValue="https://localhost:9999/assets/icon-32.png" />
-  <HighResolutionIconUrl
-    DefaultValue="https://localhost:9999/assets/icon-32.png"
-  />
-  <SupportUrl DefaultValue="https://localhost:9999" />
-  <!-- Domains that are allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation is only allowed if the domain is on this list. -->
+  <DisplayName DefaultValue="Private addin"/>
+  <Description DefaultValue="A template to get started."/>
+  <IconUrl DefaultValue="https://localhost:9999/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:9999/assets/icon-80.png"/>
+  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
   <AppDomains>
-    <AppDomain>AppDomain1</AppDomain>
-    <AppDomain>AppDomain2</AppDomain>
+    <AppDomain>https://www.contoso.com</AppDomain>
   </AppDomains>
-
-  <!-- BeginTaskPaneMode integration. Any client that doesn't understand commands will use this section.
-    This section will also be used if there are no VersionOverrides. -->
   <Hosts>
-    <Host Name="Document" />
+    <Host Name="Document"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:9999" />
+    <SourceLocation DefaultValue="https://localhost:9999"/>
   </DefaultSettings>
-
   <Permissions>ReadWriteDocument</Permissions>
-
-  <!-- BeginAddinCommandsMode integration. -->
-  <VersionOverrides
-    xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
-    xsi:type="VersionOverridesV1_0"
-  >
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="Document">
         <DesktopFormFactor>
           <GetStarted>
-            <Title resid="GetStarted.Title" />
-            <Description resid="GetStarted.Description" />  
-            <LearnMoreUrl resid="GetStarted.LearnMoreUrl" />
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
           </GetStarted>
-          <!-- <FunctionFile resid="Commands.Url" /> -->
-
-          <!-- PrimaryCommandSurface==Main Office app ribbon. -->
+          <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <OfficeTab id="TabHome">
               <Group id="CommandsGroup">
-                <Label resid="CommandsGroup.Label" />
+                <Label resid="CommandsGroup.Label"/>
                 <Icon>
-                  <bt:Image size="16" resid="Icon.16" />
-                  <bt:Image size="32" resid="Icon.32" />
-                  <bt:Image size="64" resid="Icon.64" />
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
                 </Icon>
-
                 <Control xsi:type="Button" id="TaskpaneButton">
                   <Label resid="TaskpaneButton.Label"/>
                   <Supertip>
@@ -73,13 +45,13 @@
                     <Description resid="TaskpaneButton.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16" />
-                    <bt:Image size="32" resid="Icon.32" />
-                    <bt:Image size="64" resid="Icon.64" />
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>ButtonId1</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url" />
+                    <SourceLocation resid="Taskpane.Url"/>
                   </Action>
                 </Control>
               </Group>
@@ -88,31 +60,16 @@
         </DesktopFormFactor>
       </Host>
     </Hosts>
-
-    <!-- You can use resources across hosts and form factors. -->
     <Resources>
       <bt:Images>
-        <bt:Image
-          id="Icon.16"
-          DefaultValue="https://localhost/assets/icon-16.png"
-        />
-        <bt:Image
-          id="Icon.32"
-          DefaultValue="https://localhost/assets/icon-32.png"
-        />
-        <bt:Image
-          id="Icon.64"
-          DefaultValue="https://localhost/assets/icon-64.png"
-        />
-        <bt:Image
-          id="FunctionButton.Icon"
-          DefaultValue="https://localhost/assets/icon-32.png"
-        />
+        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:9999/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:9999/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:9999/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost:9999" />
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:9999" />
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://localhost:9999"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:9999"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
