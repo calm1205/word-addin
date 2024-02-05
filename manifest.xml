@@ -53,7 +53,7 @@
             <Description resid="GetStarted.Description" />  
             <LearnMoreUrl resid="GetStarted.LearnMoreUrl" />
           </GetStarted>
-          <FunctionFile resid="FunctionFile.Url" />
+          <!-- <FunctionFile resid="Commands.Url" /> -->
 
           <!-- PrimaryCommandSurface==Main Office app ribbon. -->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -67,7 +67,7 @@
                 </Icon>
 
                 <!-- Control. It can be of type "Button" or "Menu". -->
-                <Control xsi:type="Button" id="TaskpaneButton">
+                <!-- <Control xsi:type="Button" id="TaskpaneButton">
                   <Label resid="TaskpaneButton.Label"/>
                   <Supertip>
                     <Title resid="TaskpaneButton.Label"/>
@@ -82,7 +82,7 @@
                     <TaskpaneId>ButtonId1</TaskpaneId>
                     <SourceLocation resid="Taskpane.Url" />
                   </Action>
-                </Control>
+                </Control> -->
               </Group>
             </OfficeTab>
           </ExtensionPoint>
@@ -112,8 +112,8 @@
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost:9999/commands" />
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:9999/taskpane" />
+        <bt:Url id="Commands.Url" DefaultValue="https://localhost:9999" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:9999" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
