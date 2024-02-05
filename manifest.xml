@@ -6,10 +6,7 @@
   xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
   xsi:type="TaskPaneApp"
 >
-
   <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation.-->
-
-  <!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided. -->
 
   <!-- IMPORTANT! Id must be unique for your add-in. If you copy this manifest, ensure that you change this ID to your own GUID. -->
   <Id>e504fb41-a92a-4526-b101-542f357b7acb</Id>
@@ -25,13 +22,12 @@
   <HighResolutionIconUrl
     DefaultValue="https://localhost:9999/assets/icon-32.png"
   />
-  <SupportUrl DefaultValue="https://localhost:9999/index.html" />
+  <SupportUrl DefaultValue="https://localhost:9999" />
   <!-- Domains that are allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation is only allowed if the domain is on this list. -->
   <AppDomains>
     <AppDomain>AppDomain1</AppDomain>
     <AppDomain>AppDomain2</AppDomain>
   </AppDomains>
-  <!-- End Basic Settings. -->
 
   <!-- BeginTaskPaneMode integration. Any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides. -->
@@ -39,9 +35,8 @@
     <Host Name="Document" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost" />
+    <SourceLocation DefaultValue="https://localhost:9999" />
   </DefaultSettings>
-  <!-- EndTaskPaneMode integration. -->
 
   <Permissions>ReadWriteDocument</Permissions>
 
@@ -51,64 +46,40 @@
     xsi:type="VersionOverridesV1_0"
   >
     <Hosts>
-      <!-- Each host can have a different set of commands. Cool huh!? -->
-      <!-- Workbook=Excel, Document=Word, Presentation=PowerPoint -->
-      <!-- Make sure the hosts you override match the hosts declared in the top section of the manifest. -->
       <Host xsi:type="Document">
-        <!-- Form factor. DesktopFormFactor is supported. Other form factors are available depending on the host and feature. -->
         <DesktopFormFactor>
-          <!-- This code enables a customizable message to be displayed when the add-in is loaded successfully upon individual install. -->
           <GetStarted>
-            <!-- Title of the Getting Started callout. The resid attribute points to a ShortString resource. -->
             <Title resid="GetStarted.Title" />
-            <!-- Description of the Getting Started callout. resid points to a LongString resource. -->
             <Description resid="GetStarted.Description" />  
-            <!-- Points to a URL resource which details how the add-in should be used. -->
             <LearnMoreUrl resid="GetStarted.LearnMoreUrl" />
           </GetStarted>
-          <!-- Function file is an HTML page that includes, or loads, the JavaScript where functions for ExecuteAction will be called. Think of the FunctionFile as the "code behind" ExecuteFunction. -->
           <FunctionFile resid="FunctionFile.Url" />
 
           <!-- PrimaryCommandSurface==Main Office app ribbon. -->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <!-- Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab. -->
-            <!-- Documentation includes all the IDs currently tested to work. -->
             <OfficeTab id="TabHome">
-              <!--Group ID-->
               <Group id="CommandsGroup">
-                <!--Label for your group. resid must point to a ShortString resource. -->
-                <Label resid="CommandsGroup.GroupLabel" />
+                <Label resid="CommandsGroup.Label" />
                 <Icon>
-                  <!-- Each size needs its own icon resource or it will look distorted when resized. -->
-                  <!-- Icons. Required sizes: 16, 32, 64; optional: 20, 24, 40, 48, 64. You should provide as many sizes as possible for a great user experience. -->
-                  <!-- Use PNG icons and remember that all URLs on the resources section must use HTTPS. -->
                   <bt:Image size="16" resid="Icon.16" />
                   <bt:Image size="32" resid="Icon.32" />
                   <bt:Image size="64" resid="Icon.64" />
                 </Icon>
 
                 <!-- Control. It can be of type "Button" or "Menu". -->
-                <Control xsi:type="Button" id="FunctionButton">
-                  <!-- Label for your button. resid must point to a ShortString resource. -->
-                  <Label resid="FunctionButton.Label" />
+                <Control xsi:type="Button" id="TaskpaneButton">
+                  <Label resid="TaskpaneButton.Label"/>
                   <Supertip>
-                    <!-- ToolTip title. resid must point to a ShortString resource. -->
-                    <Title resid="FunctionButton.Label" />
-                    <!-- ToolTip description. resid must point to a LongString resource. -->
-                    <Description resid="FunctionButton.Tooltip" />
+                    <Title resid="TaskpaneButton.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="FunctionButton.Icon16" />
-                    <bt:Image size="32" resid="FunctionButton.Icon32" />
-                    <bt:Image size="64" resid="FunctionButton.Icon64" />
+                    <bt:Image size="16" resid="Icon.16" />
+                    <bt:Image size="32" resid="Icon.32" />
+                    <bt:Image size="64" resid="Icon.64" />
                   </Icon>
-                  <!-- This is what happens when the command is triggered (e.g., click on the ribbon button). -->
-                  <!-- Supported actions are ExecuteFunction or ShowTaskpane. -->
-                  <!-- Look at the FunctionFile.html page for reference on how to implement the function. -->
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>ButtonId1</TaskpaneId>
-                    <!-- Provide a url resource id for the location that will be displayed on the
-                    task pane. -->
                     <SourceLocation resid="Taskpane.Url" />
                   </Action>
                 </Control>
@@ -140,31 +111,19 @@
         />
       </bt:Images>
       <bt:Urls>
-        <bt:Url
-          id="GetStarted.LearnMoreUrl"
-          DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"
-        />
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost/#/commands" />
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost/#/taskpane" />
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
+        <bt:Url id="Commands.Url" DefaultValue="https://localhost:9999/commands" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:9999/taskpane" />
       </bt:Urls>
-      <!-- ShortStrings max characters==125. -->
       <bt:ShortStrings>
-        <bt:String
-          id="GetStarted.Title"
-          DefaultValue="Get started with your sample add-in!"
-        />
-        <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group" />
-        <bt:String id="Labe.l" DefaultValue="Word Addin(Local)" />
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
       </bt:ShortStrings>
-      <!-- LongStrings max characters==250. -->
       <bt:LongStrings>
-        <bt:String
-          id="GetStarted.Description"
-          DefaultValue="Your sample add-in loaded successfully."
-        />
-        <bt:String id="Tool.tip" DefaultValue="Click to Show a Taskpane" />
+        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
-  <!-- EndAddinCommandsMode integration. -->
 </OfficeApp>
