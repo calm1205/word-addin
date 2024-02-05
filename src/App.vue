@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 
-onMounted(() => {
-  window.Office.onReady();
+onMounted(async () => {
+  await window.Office.onReady();
 });
 </script>
 
