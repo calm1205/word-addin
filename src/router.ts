@@ -5,8 +5,13 @@ const routes = [
   {
     path: "/",
     name: "root",
-    component: () => import("./views/TaskPane.vue"),
+    component: () => import("./views/Index.vue"),
   },
+  // {
+  //   path: "/taskpane",
+  //   name: "root",
+  //   component: () => import("./views/TaskPane.vue"),
+  // },
   {
     path: "/taskpane",
     name: "taskpane",
