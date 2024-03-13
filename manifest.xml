@@ -2,9 +2,9 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>a6a6b680-d4eb-470b-9028-8138cf43590a</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Contoso</ProviderName>
+  <ProviderName>MNTSQ</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Private addin"/>
+  <DisplayName DefaultValue="パネル上部のタイトル"/>
   <Description DefaultValue="A template to get started."/>
   <IconUrl DefaultValue="https://localhost:9999/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:9999/assets/icon-80.png"/>
@@ -39,9 +39,13 @@
                   <bt:Image size="80" resid="Icon.80x80"/>
                 </Icon>
                 <Control xsi:type="Button" id="TaskpaneButton">
+
+                  <!-- ボタンのタイトル -->
                   <Label resid="TaskpaneButton.Label"/>
+
+                  <!-- ツールチップ -->
                   <Supertip>
-                    <Title resid="TaskpaneButton.Label"/>
+                    <Title resid="TaskpaneButton.Title"/>
                     <Description resid="TaskpaneButton.Tooltip"/>
                   </Supertip>
                   <Icon>
@@ -74,11 +78,12 @@
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="リボンタイトル"/>
+        <bt:String id="TaskpaneButton.Title" DefaultValue="ツールチップタイトル"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="ツールチップの説明文"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
