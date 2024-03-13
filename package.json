@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "format": "prettier --plugin=@prettier/plugin-xml --write '**/*.{xml,json,ts,css,html,js,vue}'",
     "validate": "office-addin-manifest validate manifest.xml",
-    "debug": "office-addin-debugging start manifest.xml"
+    "odev": "office-addin-debugging start manifest.xml"
   },
   "dependencies": {
     "vue": "^3.3.11",

@@ -5,7 +5,7 @@
   <ProviderName>MNTSQ</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="パネル上部のタイトル"/>
-  <Description DefaultValue="A template to get started."/>
+  <Description DefaultValue="アドインdialogでホバーした時"/>
   <IconUrl DefaultValue="https://localhost:9999/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:9999/assets/icon-80.png"/>
   <SupportUrl DefaultValue="https://www.contoso.com/help"/>
@@ -16,7 +16,7 @@
     <Host Name="Document"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:9999/#/taskpane"/>
+    <SourceLocation DefaultValue="https://localhost:9999"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -28,7 +28,9 @@
             <Description resid="GetStarted.Description"/>
             <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
           </GetStarted>
+
           <FunctionFile resid="Commands.Url"/>
+
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <OfficeTab id="TabHome">
               <Group id="CommandsGroup">
@@ -39,7 +41,6 @@
                   <bt:Image size="80" resid="Icon.80x80"/>
                 </Icon>
                 <Control xsi:type="Button" id="TaskpaneButton">
-
                   <!-- ボタンのタイトル -->
                   <Label resid="TaskpaneButton.Label"/>
 
@@ -76,13 +77,13 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:9999/#/taskpane"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
+        <bt:String id="GetStarted.Title" DefaultValue="アドイン導入時のツールチップタイトル"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="リボンタイトル"/>
         <bt:String id="TaskpaneButton.Title" DefaultValue="ツールチップタイトル"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
+        <bt:String id="GetStarted.Description" DefaultValue="アドイン導入時のツールチップ説明"/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="ツールチップの説明文"/>
       </bt:LongStrings>
     </Resources>
