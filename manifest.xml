@@ -2,13 +2,25 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>a6a6b680-d4eb-470b-9028-8138cf43590a</Id>
   <Version>1.0.0.0</Version>
+
+  <!-- https://learn.microsoft.com/en-us/javascript/api/manifest?view=common-js-preview -->
+
+  <!-- iアイコンをクリックした時に見える名前 -->
   <ProviderName>MNTSQ</ProviderName>
+
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="パネル上部のタイトル"/>
-  <Description DefaultValue="アドインdialogでホバーした時"/>
-  <IconUrl DefaultValue="https://localhost:9999/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:9999/assets/icon-80.png"/>
+
+  <!-- GetStartedタグが無い場合はこれが表示される -->
+  <DisplayName DefaultValue="MNTSQ"/> <!-- パネル上部のタイトル -->
+  <Description DefaultValue="This is MNTSQ Addin"/> <!-- アドインdialogでホバー時のツールチップ -->
+
+  <!-- iアイコンをクリックした時 and アドインdialogでの表示 -->
+  <IconUrl DefaultValue="https://localhost:9999/assets/mntsq-32x32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:9999/assets/mntsq-80x80.png"/>
+
+  <!-- サポートを受けるで遷移する画面 -->
   <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+
   <AppDomains>
     <AppDomain>https://www.contoso.com</AppDomain>
   </AppDomains>
@@ -23,26 +35,33 @@
     <Hosts>
       <Host xsi:type="Document">
         <DesktopFormFactor>
-          <GetStarted>
+
+          <!-- アドイン導入時のツールチップ -->
+          <!-- <GetStarted>
             <Title resid="GetStarted.Title"/>
             <Description resid="GetStarted.Description"/>
             <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
-          </GetStarted>
+          </GetStarted> -->
 
-          <FunctionFile resid="Commands.Url"/>
+          <!-- A URL to a file that contains JavaScript functions. 必須ではない -->
+          <!-- <FunctionFile resid="Commands.Url"/> -->
 
+          <!-- addinとしてどこに表示するのか？ タブ or 右クリック等 -->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
+
+            <!-- どこに表示するか？ e.g. ホームタブ、挿入タブ -->
             <OfficeTab id="TabHome">
               <Group id="CommandsGroup">
                 <Label resid="CommandsGroup.Label"/>
                 <Icon>
-                  <bt:Image size="16" resid="Icon.16x16"/>
-                  <bt:Image size="32" resid="Icon.32x32"/>
-                  <bt:Image size="80" resid="Icon.80x80"/>
+                  <bt:Image size="16" resid="Mntsq.16x16"/>
+                  <bt:Image size="32" resid="Mntsq.32x32"/>
+                  <bt:Image size="80" resid="Mntsq.80x80"/>
                 </Icon>
+
+                <!-- ControlはGroup内で複数定義可能 -->
                 <Control xsi:type="Button" id="TaskpaneButton">
-                  <!-- ボタンのタイトル -->
-                  <Label resid="TaskpaneButton.Label"/>
+                  <Label resid="TaskpaneButton.Label.Ai"/> <!-- ボタンのタイトル -->
 
                   <!-- ツールチップ -->
                   <Supertip>
@@ -50,15 +69,37 @@
                     <Description resid="TaskpaneButton.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80-2"/>
+                    <bt:Image size="16" resid="Mntsq.16x16"/>
+                    <bt:Image size="32" resid="Mntsq.32x32"/> <!-- リボンに表示されるアイコン -->
+                    <bt:Image size="80" resid="Mntsq.80x80"/>
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>ButtonId1</TaskpaneId>
                     <SourceLocation resid="Taskpane.Url"/>
                   </Action>
                 </Control>
+
+                <!-- ControlはGroup内で複数定義可能 -->
+                <Control xsi:type="Button" id="TaskpaneButton2">
+                  <Label resid="TaskpaneButton.Label.Matter"/> <!-- ボタンのタイトル -->
+
+                  <!-- ツールチップ -->
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Title"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Mntsq.16x16"/>
+                    <bt:Image size="32" resid="Mntsq.32x32"/> <!-- リボンに表示されるアイコン -->
+                    <bt:Image size="80" resid="Mntsq.80x80"/>
+                  </Icon>
+
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId2</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+
               </Group>
             </OfficeTab>
           </ExtensionPoint>
@@ -67,12 +108,12 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:9999/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:9999/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:9999/assets/icon-80.png"/>
-        <bt:Image id="Icon.16x16-2" DefaultValue="https://localhost:9999/assets/icon-16-2.png"/>
-        <bt:Image id="Icon.32x32-2" DefaultValue="https://localhost:9999/assets/icon-32-2.png"/>
-        <bt:Image id="Icon.80x80-2" DefaultValue="https://localhost:9999/assets/icon-80-2.png"/>
+        <bt:Image id="Mntsq.16x16" DefaultValue="https://localhost:9999/assets/mntsq-16x16.png"/>
+        <bt:Image id="Mntsq.32x32" DefaultValue="https://localhost:9999/assets/mntsq-32x32.png"/>
+        <bt:Image id="Mntsq.80x80" DefaultValue="https://localhost:9999/assets/mntsq-80x80.png"/>
+        <bt:Image id="Star.16x16" DefaultValue="https://localhost:9999/assets/star-16.png"/>
+        <bt:Image id="Star.32x32" DefaultValue="https://localhost:9999/assets/star-32.png"/>
+        <bt:Image id="Star.80x80" DefaultValue="https://localhost:9999/assets/star-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
@@ -80,13 +121,14 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:9999/#/taskpane"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="GetStarted.Title" DefaultValue="アドイン導入時のツールチップタイトル"/>
-        <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="リボンタイトル"/>
+        <bt:String id="GetStarted.Title" DefaultValue="MNTSQ addin"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="Command Group"/>
+        <bt:String id="TaskpaneButton.Label.Ai" DefaultValue="AIレビュー"/>
+        <bt:String id="TaskpaneButton.Label.Matter" DefaultValue="案件アップロード"/>
         <bt:String id="TaskpaneButton.Title" DefaultValue="ツールチップタイトル"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="GetStarted.Description" DefaultValue="アドイン導入時のツールチップ説明"/>
+        <bt:String id="GetStarted.Description" DefaultValue="クリックで右パネルが開きます。"/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="ツールチップの説明文"/>
       </bt:LongStrings>
     </Resources>

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import icon16 from "/assets/icon-16.png";
+import icon16 from "/assets/mntsq-16x16.png";
 </script>
 
 <template>
