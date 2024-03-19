@@ -43,9 +43,6 @@
             <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
           </GetStarted> -->
 
-          <!-- A URL to a file that contains JavaScript functions. 必須ではない -->
-          <!-- <FunctionFile resid="Commands.Url"/> -->
-
           <!-- addinとしてどこに表示するのか？ タブ or 右クリック等 -->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
 
@@ -61,12 +58,12 @@
 
                 <!-- ControlはGroup内で複数定義可能 -->
                 <Control xsi:type="Button" id="TaskpaneButton">
-                  <Label resid="TaskpaneButton.Label.Ai"/> <!-- ボタンのタイトル -->
+                  <Label resid="TaskpaneButton.Label.Main"/> <!-- ボタンのタイトル -->
 
                   <!-- ツールチップ -->
                   <Supertip>
-                    <Title resid="TaskpaneButton.Title"/>
-                    <Description resid="TaskpaneButton.Tooltip"/>
+                    <Title resid="Tooltip.Title"/>
+                    <Description resid="Tooltip.Description"/>
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Mntsq.16x16"/>
@@ -75,18 +72,18 @@
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>ButtonId1</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url"/>
+                    <SourceLocation resid="Taskpane.Url.Main"/>
                   </Action>
                 </Control>
 
                 <!-- ControlはGroup内で複数定義可能 -->
                 <Control xsi:type="Button" id="TaskpaneButton2">
-                  <Label resid="TaskpaneButton.Label.Matter"/> <!-- ボタンのタイトル -->
+                  <Label resid="TaskpaneButton.Label.Sub"/> <!-- ボタンのタイトル -->
 
                   <!-- ツールチップ -->
                   <Supertip>
-                    <Title resid="TaskpaneButton.Title"/>
-                    <Description resid="TaskpaneButton.Tooltip"/>
+                    <Title resid="Tooltip.Title"/>
+                    <Description resid="Tooltip.Description"/>
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Mntsq.16x16"/>
@@ -95,8 +92,8 @@
                   </Icon>
 
                   <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>ButtonId2</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url"/>
+                    <!-- <TaskpaneId>ButtonId2</TaskpaneId> -->
+                    <SourceLocation resid="Taskpane.Url.Sub"/>
                   </Action>
                 </Control>
 
@@ -111,25 +108,22 @@
         <bt:Image id="Mntsq.16x16" DefaultValue="https://localhost:9999/assets/mntsq-16x16.png"/>
         <bt:Image id="Mntsq.32x32" DefaultValue="https://localhost:9999/assets/mntsq-32x32.png"/>
         <bt:Image id="Mntsq.80x80" DefaultValue="https://localhost:9999/assets/mntsq-80x80.png"/>
-        <bt:Image id="Star.16x16" DefaultValue="https://localhost:9999/assets/star-16.png"/>
-        <bt:Image id="Star.32x32" DefaultValue="https://localhost:9999/assets/star-32.png"/>
-        <bt:Image id="Star.80x80" DefaultValue="https://localhost:9999/assets/star-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost:9999/#/taskpane"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:9999/#/taskpane"/>
+        <bt:Url id="Taskpane.Url.Main" DefaultValue="https://localhost:9999/#/taskpane"/>
+        <bt:Url id="Taskpane.Url.Sub" DefaultValue="https://localhost:9999/#/taskpaneSub"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="MNTSQ addin"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Command Group"/>
-        <bt:String id="TaskpaneButton.Label.Ai" DefaultValue="AIレビュー"/>
-        <bt:String id="TaskpaneButton.Label.Matter" DefaultValue="案件アップロード"/>
-        <bt:String id="TaskpaneButton.Title" DefaultValue="ツールチップタイトル"/>
+        <bt:String id="TaskpaneButton.Label.Main" DefaultValue="Main Addin"/>
+        <bt:String id="TaskpaneButton.Label.Sub" DefaultValue="Sub Addin"/>
+        <bt:String id="Tooltip.Title" DefaultValue="Tooltip Title"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="クリックで右パネルが開きます。"/>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="ツールチップの説明文"/>
+        <bt:String id="Tooltip.Description" DefaultValue="Tooltip description"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>

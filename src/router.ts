@@ -9,7 +9,12 @@ const routes = [
   {
     path: "/taskpane",
     name: "taskpane",
-    component: () => import("./views/TaskPane.vue"),
+    component: () => import("./views/TaskPaneMain.vue"),
+  },
+  {
+    path: "/taskpaneSub",
+    name: "taskpaneSub",
+    component: () => import("./views/TaskPaneSub.vue"),
   },
   {
     path: "/assets",
