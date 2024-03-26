@@ -34,8 +34,12 @@
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="Document">
-        <DesktopFormFactor>
+        <Runtimes>
+          <Runtime resid="Taskpane.Url.Sub" lifetime="long" />
+        </Runtimes>
 
+        <DesktopFormFactor>
+          <FunctionFile resid="Taskpane.Url.Sub" />
           <!-- アドイン導入時のツールチップ -->
           <!-- <GetStarted>
             <Title resid="GetStarted.Title"/>
@@ -100,9 +104,8 @@
                     <bt:Image size="80" resid="Mntsq.80x80"/>
                   </Icon>
 
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="Taskpane.Url.Sub"/>
-                    <Title resid="TaskpaneButton.Label.Sub"/> <!-- パネルヘッダー名 -->
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>showSubTaskpane</FunctionName>
                   </Action>
                 </Control>
               </Group>
