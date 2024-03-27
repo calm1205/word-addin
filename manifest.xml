@@ -106,6 +106,7 @@
 
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>showSubTaskpane</FunctionName>
+                    <Title resid="TaskpaneButton.Label.Sub"/> <!-- パネルヘッダー名 -->
                   </Action>
                 </Control>
               </Group>
