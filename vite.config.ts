@@ -6,6 +6,7 @@ import { pathToFileURL } from "url";
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
+    host: "subdomain.localhost",
     port: 9999,
     https: {
       key: fs.readFileSync("./src/ssl/localhost.key"),

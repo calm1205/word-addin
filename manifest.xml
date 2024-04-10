@@ -15,20 +15,21 @@
   <Description DefaultValue="This is MNTSQ Addin"/> <!-- アドインdialogでホバー時のツールチップ -->
 
   <!-- iアイコンをクリックした時 and アドインdialogでの表示 -->
-  <IconUrl DefaultValue="https://localhost:9999/assets/mntsq-32x32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:9999/assets/mntsq-80x80.png"/>
+  <IconUrl DefaultValue="https://subdomain.localhost:9999/assets/mntsq-32x32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://subdomain.localhost:9999/assets/mntsq-80x80.png"/>
 
   <!-- サポートを受けるで遷移する画面 -->
   <SupportUrl DefaultValue="https://www.contoso.com/help"/>
 
   <AppDomains>
     <AppDomain>https://www.contoso.com</AppDomain>
+    <AppDomain>https://subdomain.localhost:9999</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Document"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:9999"/>
+    <SourceLocation DefaultValue="https://subdomain.localhost:9999"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -106,7 +107,6 @@
 
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>showSubTaskpane</FunctionName>
-                    <Title resid="TaskpaneButton.Label.Sub"/> <!-- パネルヘッダー名 -->
                   </Action>
                 </Control>
               </Group>
@@ -117,14 +117,14 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Mntsq.16x16" DefaultValue="https://localhost:9999/assets/mntsq-16x16.png"/>
-        <bt:Image id="Mntsq.32x32" DefaultValue="https://localhost:9999/assets/mntsq-32x32.png"/>
-        <bt:Image id="Mntsq.80x80" DefaultValue="https://localhost:9999/assets/mntsq-80x80.png"/>
+        <bt:Image id="Mntsq.16x16" DefaultValue="https://subdomain.localhost:9999/assets/mntsq-16x16.png"/>
+        <bt:Image id="Mntsq.32x32" DefaultValue="https://subdomain.localhost:9999/assets/mntsq-32x32.png"/>
+        <bt:Image id="Mntsq.80x80" DefaultValue="https://subdomain.localhost:9999/assets/mntsq-80x80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
-        <bt:Url id="Taskpane.Url.Main" DefaultValue="https://localhost:9999/#/taskpane"/>
-        <bt:Url id="Taskpane.Url.Sub" DefaultValue="https://localhost:9999/#/taskpaneSub"/>
+        <bt:Url id="Taskpane.Url.Main" DefaultValue="https://subdomain.localhost:9999/#/taskpane"/>
+        <bt:Url id="Taskpane.Url.Sub" DefaultValue="https://subdomain.localhost:9999/#/taskpaneSub"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="MNTSQ addin"/>
